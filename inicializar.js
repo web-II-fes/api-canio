@@ -1,6 +1,5 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.initApi = void 0;
 var bodyparser = require("body-parser");
 var config = require("./config");
 var conections_1 = require("./conections");
@@ -22,7 +21,7 @@ function initApi(app) {
         }
     });
     for (var m in config.modules) {
-        if (config.modules[m].active === true) {
+        if (config.modules[m].active) {
             var routes = requireDir(config.modules[m].path);
             for (var route in routes) {
                 if (config.modules[m].middleware) {

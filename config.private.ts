@@ -5,4 +5,8 @@ export const hosts = {
             reconnectTries: Number.MAX_VALUE
         }
     }
-}
+};
+
+export const key = {
+    secret : 'ifes-secret-key'
+};

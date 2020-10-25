@@ -6,5 +6,5 @@ var app = express();
 inicializar_1.initApi(app);
 var server = require('http').Server(app);
 var port = 3002;
-server = app.listen(3002, function () { return console.log("escuchando en el puerto %s ", port); });
+server = app.listen(3002, function () { return console.log("Escuchando en el puerto %s ", port); });
 //# sourceMappingURL=index.js.map

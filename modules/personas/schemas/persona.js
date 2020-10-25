@@ -1,6 +1,5 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.personaSchema = void 0;
 var mongoose_1 = require("mongoose");
 var schemaPersona = new mongoose_1.Schema({
     nombre: String,

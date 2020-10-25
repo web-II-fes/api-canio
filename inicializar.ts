@@ -26,7 +26,7 @@ export function initApi(app: express){
 	});
 
     for (const m in config.modules) {
-        if (config.modules[m].active === true){
+        if (config.modules[m].active){
             const routes = requireDir(config.modules[m].path);
             for (const route in routes){
                 if (config.modules[m].middleware){

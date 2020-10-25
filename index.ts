@@ -8,4 +8,4 @@ initApi(app);
 var server = require('http').Server(app);
 
 const port = 3002;
-server = app.listen(3002, () => console.log("escuchando en el puerto %s ", port));
+server = app.listen(3002, () => console.log("Escuchando en el puerto %s ", port));
