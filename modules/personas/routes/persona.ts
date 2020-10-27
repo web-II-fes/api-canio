@@ -7,12 +7,24 @@ const router = express.Router();
 
 router.get('/persona', async (req, res, next) => {
     
-  console.log('Entra a personas');
-	personaSchema.find((err, persona) => {
-		if (err) return;
+	personaSchema.find(function(err, persona) {
+		if (err){
+      return err;
+    } 
 		res.send(persona);
 	});
 });
+
+router.get("/personaId/:id", async (req, res) => {
+  let idPersona = req.params.id;
+  try {
+    let personas = await personaSchema.findById(idPersona);
+    res.send(personas);
+  } catch (err) {
+    throw err;
+  }
+});
+
 
 router.post('/persona', (req, res) => {
   
@@ -24,6 +36,8 @@ router.post('/persona', (req, res) => {
     res.json(persona);
   });
 });
+
+
 
 router.put('/persona/:_id', (req, res, next) => {
 

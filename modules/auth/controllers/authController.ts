@@ -19,11 +19,12 @@ export function registro(usuario: any) {
 	}
 }
 
-export async function login(usuario) {
+export async function login(usuario : any) {
 	try {
 		let userLogin = await userSchema.findOne({ username: usuario.username });
 		
 		if (!userLogin) {
+		// if (!userSchema) {
 			return false;
 		}
 		

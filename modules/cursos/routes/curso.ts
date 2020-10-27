@@ -14,6 +14,16 @@ router.get('/curso', async (req, res) => {
     
 });
 
+router.get("/cursoId/:id", async (req, res) => {
+  let idCurso = req.params.id;
+  try {
+    let cursos = await cursoSchema.findById(idCurso);
+    res.send(cursos);
+  } catch (err) {
+    throw err;
+  }
+});
+
 router.post('/curso', async (req, res) => {
 
     try {

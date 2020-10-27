@@ -24,9 +24,10 @@ router.post('/login', async (req, res) => {
             token: token
         });
     }catch(err){
-        res.send({
-            error: err
-        });
+        // res.send({
+        //     error: err
+        throw err;
+        // });
     }
 });
 

@@ -40,13 +40,34 @@ var persona_1 = require("./../schemas/persona");
 var router = express.Router();
 router.get('/persona', function (req, res, next) { return __awaiter(void 0, void 0, void 0, function () {
     return __generator(this, function (_a) {
-        console.log('Entra a personas');
         persona_1.personaSchema.find(function (err, persona) {
-            if (err)
-                return;
+            if (err) {
+                return err;
+            }
             res.send(persona);
         });
         return [2 /*return*/];
+    });
+}); });
+router.get("/personaId/:id", function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
+    var idPersona, personas, err_1;
+    return __generator(this, function (_a) {
+        switch (_a.label) {
+            case 0:
+                idPersona = req.params.id;
+                _a.label = 1;
+            case 1:
+                _a.trys.push([1, 3, , 4]);
+                return [4 /*yield*/, persona_1.personaSchema.findById(idPersona)];
+            case 2:
+                personas = _a.sent();
+                res.send(personas);
+                return [3 /*break*/, 4];
+            case 3:
+                err_1 = _a.sent();
+                throw err_1;
+            case 4: return [2 /*return*/];
+        }
     });
 }); });
 router.post('/persona', function (req, res) {
